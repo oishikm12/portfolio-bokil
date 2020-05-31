@@ -1,0 +1,340 @@
+body {
+    background: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Scroll Bar */
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #1e1e24 #23a6d5;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #23a6d5;
+    border-radius: 5px;
+    border: 5px solid #23a6d5;
+}
+
+
+/* Preloader */
+
+.spinner-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    z-index: 999999;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    background-color: #23a6d5;
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    animation: rotate 1.2s infinite ease-in-out;
+    transition: all 1.2s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+/* Header Formatting */
+
+.showcase::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://images.static-collegedunia.com/public/college_data/images/appImage/1518500807mitbuilding6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(7px);
+    transition: all 1000ms;
+}
+
+.showcase:hover::after {
+    filter: blur(0px);
+}
+
+.showcase:hover .content {
+    filter: blur(2px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    margin-top: 40px;
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+.content .logo {
+    height: 300px;
+    width: 300px;
+}
+
+.content .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.content .text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+.btn {
+    background: none;
+    border: none;
+    outline: none;
+    color: antiquewhite;
+    position: absolute;
+    z-index: 1;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 800ms;
+    animation: updown 800ms ease-in alternate infinite;
+}
+
+@keyframes updown {
+    from {
+        transform: translate(-50%, 0%);
+    }
+
+    to {
+        transform: translate(-50%, 10%);
+    }
+}
+
+.btn:hover {
+    color: #333;
+}
+
+/* Global Styling */
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.bg-light {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.bg-dark {
+    background: #333;
+    color: #f4f4f4;
+}
+
+/* Menu */
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+.container a {
+    text-decoration: none;
+    color: #f4f4f4;
+    transition: all 0.5s;
+}
+
+.container #abt:hover {
+    color: #23c0bd;
+}
+
+.container #pub:hover {
+    color: #9369a3;
+}
+
+.container #ctc:hover {
+    color: #ea5c66;
+}
+
+.grid-3 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Style Box */
+
+.seperator {
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Short Info Panel */
+
+.grid-2 {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 4fr;
+}
+
+.picture {
+    transform: scale(1.2);
+}
+
+/* Footer */
+
+footer {
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-weight: lighter;
+}
+
+footer p a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-weight: bold;
+}
+
+footer p #heart {
+    color: #f03b3b;
+}
+
+/* Media Query - Smaller Screens */
+
+@media (max-width: 560px) {
+    .showcase::after {
+        height: 50vh;
+    }
+
+    .showcase:hover::after {
+        filter: blur(7px);
+    }
+
+    .showcase:hover .content {
+        filter: blur(0px);
+    }
+
+    .content {
+        top: 5%;
+        margin-top: 5px;
+        width: 300px;
+        transform: translate(-50%, 0%);
+    }
+
+    .content .logo {
+        height: 200px;
+        width: 200px;
+    }
+
+    .content .title {
+        font-size: 1.5rem;
+    }
+
+    .content .text {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .services div {
+        border-bottom: #333 dashed 1px;
+        padding: 1.2rem 1rem;
+    }
+
+}
+
+/* Media Query - Small Device - Landscape Mode */
+
+@media (max-height: 500px) {
+
+    .content .title,
+    .content .text {
+        display: none;
+    }
+
+    .content .logo {
+        height: 250px;
+        width: 250px;
+    }
+
+    .showcase:hover::after {
+        filter: blur(7px);
+    }
+
+    .showcase:hover .content {
+        filter: blur(0px);
+    }
+
+    .btn {
+        top: 80%;
+        transform: scale(0.8) translate(-65%);
+        animation: none;
+    }
+
+    .content {
+        top: 0;
+        transform: translate(-50%, 0%);
+    }
+}
